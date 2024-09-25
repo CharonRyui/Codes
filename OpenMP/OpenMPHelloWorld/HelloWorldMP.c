@@ -6,7 +6,9 @@ int main() {
     int threadID;
     int countNum = 0;
 
-    #pragma omp parallel private(threadID, threadsNum) 
+    omp_set_num_threads(7);
+    
+    #pragma omp parallel /*num_threads(7)*/ private(threadID, threadsNum)
     {
 
         threadID = omp_get_thread_num();
